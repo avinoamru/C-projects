@@ -13,5 +13,6 @@ run: partialSums *.txt
 	@./partialSums < inputs/input4.txt >> output.txt
 	@echo All done.
 	@echo Check output.txt to see the output.
+
 clean: *.o
-	rm -f *.o
+	rm -f *.o partialSums.o

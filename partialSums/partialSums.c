@@ -14,18 +14,17 @@
 
 int main()
 {
-    int size, i, *originalArray, *partialSumsArray;
+    int size,
+        i, /* Iterator */
+        *originalArray, 
+        *partialSumsArray;
     printf("Please enter a sequence of integer numbers.\n");
     printf("The first number represents the size of an array, \n");
     printf("and the rest of the numbers are representing the array elements:\n");
+
     scanf("%d", &size);
 
     originalArray = genArray(size);
-    if (originalArray == NULL)
-    {
-        printf("Memory not allocated.\n");
-        exit(1);
-    }
 
     for (i = 0; i < size; i++)
         scanf("%d", &originalArray[i]);
@@ -57,7 +56,7 @@ int *genArray(int size)
     {
         printf("Function genArray failed to allocate memory.\n");
         printf("Program terminated.\n");
-        exit(1);
+        exit(EXIT_FAILURE);
     }
     return array;
 }
@@ -77,7 +76,7 @@ void printArray(char *arrayName, int *array, int size)
     int i;
     for (i = 0; i < size; i++)
     {
-        if (i == 0)
+        if (i == 0) /* Conditions to structure the format the array should be printed. */
             if (size == 1)
                 printf("\n%s is: [%d]\n", arrayName, array[i]);
             else
