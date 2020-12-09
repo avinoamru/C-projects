@@ -1,15 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "mat.h"
+#include "matio.h"
 
-void read_mat(MAT matrixToInit, double *valuesToInsert);
 
-void print_mat(MAT matrix);
 
 int main()
 {
 
-    MAT m1, m2, m3;
+    mat m1, m2, m3;
     double m1vals[MAX_NUM_OF_VALUES] = {2, 1, 1, 2, 1, 2, 2, 1, 3, 4, 4, 3, 4, 3, 3, 4};
     double m2vals[MAX_NUM_OF_VALUES] = {5, 4, 3, 1, 6, 4, 5, 2, 1, 4, 5, 3, 2, 5, 1, 2};
     read_mat(m1, m1vals);
@@ -27,7 +25,7 @@ int main()
     return 0;
 }
 
-void read_mat(MAT matrixToInit, double *valuesToInsert)
+void read_mat(mat matrixToInit, double *valuesToInsert)
 {
     int i, j;
     for (i = 0; i < MAT_SIZE; i++)
@@ -38,7 +36,7 @@ void read_mat(MAT matrixToInit, double *valuesToInsert)
         }
 }
 
-void print_mat(MAT matrix)
+void print_mat(mat matrix)
 {
     int i, j;
     for (i = 0; i < MAT_SIZE; i++)

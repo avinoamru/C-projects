@@ -1,8 +1,8 @@
 # specify filenames in the following lists
 
 EXEC_FILE = mymat
-C_FILES = mymat.c mat.c 
-H_FILES = mat.h
+C_FILES = mymat.c mat.c  matio.c
+H_FILES = mat.h matio.h
 
 # ==> to flush stdout after each line, insert in main() the statement: FLUSH_STDOUT; 
 # ==> to flush stderr after each line, insert in main() the statement: FLUSH_STDERR;
