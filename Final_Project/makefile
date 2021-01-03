@@ -1,8 +1,8 @@
 # specify filenames in the following lists
 
-EXEC_FILE = mymat
-C_FILES = mymat.c mat.c  matio.c
-H_FILES = mat.h matio.h
+EXEC_FILE = Assembler
+C_FILES = main.c actions.c
+H_FILES = actions.h
 
 # ==> to flush stdout after each line, insert in main() the statement: FLUSH_STDOUT; 
 # ==> to flush stderr after each line, insert in main() the statement: FLUSH_STDERR;
@@ -11,9 +11,9 @@ H_FILES = mat.h matio.h
 # no changes need to be made beyond this line
 
 # definitions for flushing after earch line
-@D_OFLUSH = -DFLUSH_STDOUT='setvbuf(stdout,NULL,_IOLBF,BUFSIZ);'
-@D_EFLUSH = -DFLUSH_STDERR='setvbuf(stderr,NULL,_IOLBF,BUFSIZ);'
-@D_FLUSH = $(D_OFLUSH) $(D_EFLUSH)
+D_OFLUSH = -DFLUSH_STDOUT='setvbuf(stdout,NULL,_IOLBF,BUFSIZ);'
+D_EFLUSH = -DFLUSH_STDERR='setvbuf(stderr,NULL,_IOLBF,BUFSIZ);'
+D_FLUSH = $(D_OFLUSH) $(D_EFLUSH)
 
 O_FILES = $(C_FILES:.c=.o)
 

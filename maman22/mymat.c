@@ -1,50 +1,46 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "matio.h"
-
-
+#include <string.h>
 
 int main()
 {
 
-    mat m1, m2, m3;
-    double m1vals[MAX_NUM_OF_VALUES] = {2, 1, 1, 2, 1, 2, 2, 1, 3, 4, 4, 3, 4, 3, 3, 4};
-    double m2vals[MAX_NUM_OF_VALUES] = {5, 4, 3, 1, 6, 4, 5, 2, 1, 4, 5, 3, 2, 5, 1, 2};
-    read_mat(m1, m1vals);
-    printf("\tmat1\n");
-    print_mat(m1);
+  mat m1, m2, m3;
+  char *inputLine;
+  strarr parsedInput;
 
-    read_mat(m2, m2vals);
-    printf("\tmat2\n");
-    print_mat(m2);
+  init_mat(m1);
+  init_mat(m2);
+  init_mat(m3);
 
-    trans_mat(m2, m3);
-    printf("\tmat3\n");
-    print_mat(m3);
+  print_mat(m3);
 
-    return 0;
-}
+/*
 
-void read_mat(mat matrixToInit, double *valuesToInsert)
-{
-    int i, j;
-    for (i = 0; i < MAT_SIZE; i++)
-        for (j = 0; j < MAT_SIZE; j++)
-        {
-            matrixToInit[i][j] = valuesToInsert == NULL ? 0 : *valuesToInsert;
-            valuesToInsert++;
-        }
-}
-
-void print_mat(mat matrix)
-{
-    int i, j;
-    for (i = 0; i < MAT_SIZE; i++)
+ while ((inputLine = input()) != NULL)
     {
-        for (j = 0; j < MAT_SIZE; j++)
+
+        if (strlen(inputLine) == 0)
         {
-            printf("%7.2f\t", matrix[i][j]);
+            printf("Empty Input\n");
+            continue;
         }
-        printf("\n");
+
+        parsedInput = splitInput(inputLine);
+
+      
+
     }
+
+    if (inputLine == NULL)
+    {
+        fputs("EOF encountered\nProgram terminated\n", stderr);
+        return EXIT_FAILURE;
+    }
+    */
+
+  
+
+  return 0;
 }
